@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+    <title>9-сабак</title>
+</head>
+<body>
+    <h1>Have a good day!</h1>
+<div class="hero">
+
+    <!-- <h1>Have a good day!</h1> -->
+    <div class="calendar">
+        <div class="left">
+<p id="date">09</p>
+<p id="day">Monday</p>
+        </div>
+        <div class="right">
+<p id="month">September</p>
+    <p id="year">2013</p>
+    </div>
+</div>
+<div class="watch">
+    <p class="время" id="time">Time</p>
+<div class="hour">
+    <p id="time1">12</p>
+    <div class="minute">
+        <p id="time2">44</p>
+        <div class="second">
+            <p id="time3">55</p>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+
+
+    <!-- <script>
+
+const date = document.getElementById('date');
+const day= document.getElementById('day');
+const month= document.getElementById('month');
+const year= document.getElementById('year');
+
+
+ 
+const today = new Date()
+const weekDays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+const allMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+
+
+date.innerHTML = today.getDate()
+day.innerHTML = weekDays[today.getDay()-1]
+month.innerHTML = allMonth[today.getMonth()]
+year.innerHTML = today.getFullYear()
+
+
+
+
+const hours = document.getElementById('time1');
+const minutes= document.getElementById('time2');
+const second= document.getElementById('time3');
+
+
+
+function updateClock(){
+const currentTime = new Date()
+hours.innerHTML = currentTime.getHours()
+minutes.innerHTML = currentTime.getMinutes()
+second.innerHTML = currentTime.getSeconds()
+
+if(hours<=9)hours="0"+hours
+    if(minutes<=9)minutes="0"+minutes
+    if(second<=9)second="0"+second
+}
+setInterval(() => {
+    updateClock
+}, 1000);
+updateClock()
+    </script> -->
+
+    <script>
+        
+const date = document.getElementById('date');
+const day = document.getElementById('day');
+const month = document.getElementById('month');
+const year = document.getElementById('year');
+
+const today = new Date();
+const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const allMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+date.innerHTML = today.getDate();
+day.innerHTML = weekDays[today.getDay() - 1];
+month.innerHTML = allMonth[today.getMonth()];
+year.innerHTML = today.getFullYear();
+
+const hours = document.getElementById('time1');
+const minutes = document.getElementById('time2');
+const seconds = document.getElementById('time3');
+
+function updateClock() {
+    const currentTime = new Date();
+    let currentHours = currentTime.getHours();
+    let currentMinutes = currentTime.getMinutes();
+    let currentSeconds = currentTime.getSeconds();
+
+    // Добавляем нули перед часами, минутами и секундами, если они меньше 10
+    if (currentHours <= 9) currentHours = "0" + currentHours;
+    if (currentMinutes <= 9) currentMinutes = "0" + currentMinutes;
+    if (currentSeconds <= 9) currentSeconds = "0" + currentSeconds;
+
+    hours.innerHTML = currentHours;
+    minutes.innerHTML = currentMinutes;
+    seconds.innerHTML = currentSeconds;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>
